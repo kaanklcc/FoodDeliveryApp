@@ -60,7 +60,6 @@ class LoginFragment : Fragment() {
                 Navigation.findNavController(view).navigate(action,navOptions)
 
             }.addOnFailureListener {exception ->
-
                 Toast.makeText(requireContext(), exception.localizedMessage, Toast.LENGTH_LONG).show()
             }
         }
