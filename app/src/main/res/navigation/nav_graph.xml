@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/foodListFragment2"
+        android:name="com.kaankilic.foodapp.view.FoodListFragment"
+        android:label="fragment_food_list"
+        tools:layout="@layout/fragment_food_list" >
+        <action
+            android:id="@+id/action_foodListFragment2_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+        <action
+            android:id="@+id/action_foodListFragment2_to_foodCartFragment2"
+            app:destination="@id/foodCartFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.kaankilic.foodapp.view.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" >
+        <action
+            android:id="@+id/action_foodDetailFragment_to_foodSearchFragment2"
+            app:destination="@id/foodSearchFragment2" />
+        <argument
+            android:name="yemek"
+            app:argType="com.kaankilic.foodapp.model.Yemekler" />
+        <action
+            android:id="@+id/action_foodDetailFragment_to_foodCartFragment2"
+            app:destination="@id/foodCartFragment2" />
+        <action
+            android:id="@+id/action_foodDetailFragment_to_foodListFragment2"
+            app:destination="@id/foodListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodSearchFragment2"
+        android:name="com.kaankilic.foodapp.view.FoodSearchFragment"
+        android:label="fragment_food_search"
+        tools:layout="@layout/fragment_food_search" >
+        <action
+            android:id="@+id/action_foodSearchFragment2_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodCartFragment2"
+        android:name="com.kaankilic.foodapp.view.FoodCartFragment"
+        android:label="fragment_food_cart"
+        tools:layout="@layout/fragment_food_cart" >
+        <argument
+            android:name="yemek_adi"
+            app:argType="string" />
+        <argument
+            android:name="yemek_fiyat"
+            app:argType="integer" />
+        <argument
+            android:name="yemek_adet"
+            app:argType="integer" />
+        <argument
+            android:name="kullanici_adi"
+            app:argType="string" />
+        <argument
+            android:name="resim_url"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_foodCartFragment2_to_foodListFragment2"
+            app:destination="@id/foodListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.kaankilic.foodapp.view.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_foodListFragment2"
+            app:destination="@id/foodListFragment2" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kaankilic.foodapp.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_foodListFragment2"
+            app:destination="@id/foodListFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.kaankilic.foodapp.view.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_foodListFragment2"
+            app:destination="@id/foodListFragment2" />
+    </fragment>
+</navigation>
