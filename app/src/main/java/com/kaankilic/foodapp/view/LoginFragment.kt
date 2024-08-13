@@ -12,7 +12,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.kaankilic.foodapp.R
-import com.kaankilic.foodapp.databinding.FragmentFoodListBinding
 import com.kaankilic.foodapp.databinding.FragmentLoginBinding
 
 

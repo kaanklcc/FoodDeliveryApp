@@ -59,7 +59,7 @@ class FoodListFragment : Fragment() {
          popup = PopupMenu(requireContext(),binding.floatingActionButton)
         val inflater = popup.menuInflater
         inflater.inflate(R.menu.my_popup_menu,popup.menu)
-        //popup.setOnMenuItemClickListener(this)
+
 
 
         observeLiveData()

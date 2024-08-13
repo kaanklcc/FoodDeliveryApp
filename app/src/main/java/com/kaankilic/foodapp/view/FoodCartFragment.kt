@@ -39,26 +39,7 @@ class FoodCartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[FoodCartViewModel::class.java]
         listeVievModel = ViewModelProvider(this)[FoodListViewModel::class.java]
-        //argsla veri al sepetteki yemekleri getire koy veya byla
-        /*val bundle: FoodCartFragmentArgs by navArgs()
-        val sepetYemek = SepetYemekler(
-            null,
-            bundle.yemekAdi,
-            bundle.resimUrl,
-            bundle.yemekFiyat,
-            bundle.yemekAdet,
-            bundle.kullaniciAdi
-        )
 
-        viewModel.sepeteYemekEkle(
-            sepetYemek.yemek_adi,
-            sepetYemek.yemek_resim_adi,
-            sepetYemek.yemek_fiyat,
-            sepetYemek.yemek_siparis_adet,
-            sepetYemek.kullanici_adi
-        )
-
-        viewModel.sepettekiYemekleriGetir(bundle.kullaniciAdi)*/
 
        arguments?.let {
             val sepetYemek = SepetYemekler(

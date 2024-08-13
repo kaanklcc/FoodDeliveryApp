@@ -36,15 +36,14 @@ class FoodCartViewModel(application: Application) : AndroidViewModel(application
                 val response = yemekAPI.sepeteYemekEkle(
                     yemek_adi, yemek_resim_adi, yemek_fiyat, yemek_siparis_adet, kullanici_adi
                 )
-                if (response.success == 1) { // "succes" yerine "success"
-                    // Ekleme başarılı, sepeti tekrar getir
+                if (response.success == 1) {
                     sepettekiYemekleriGetir(kullanici_adi)
                 } else {
-                    // Ekleme başarısız, hata mesajını loglayın
+
                     Log.e("FoodCartViewModel", "Yemek ekleme başarısız: ${response.message}")
                 }
             } catch (e: Exception) {
-                // Hata durumunda loglayın
+
                 Log.e("FoodCartViewModel", "Yemek ekleme hatası: ${e.message}")
             }
         }
@@ -56,7 +55,7 @@ class FoodCartViewModel(application: Application) : AndroidViewModel(application
                 val response = yemekAPI.sepettenYemekSil(sepet_yemek_id, kullanici_adi)
                 withContext(Dispatchers.Main) {
                     if (response.success == 1) {
-                        // Silme başarılı, sepeti tekrar getir
+
                         sepettekiYemekleriGetir(kullanici_adi)
                     } else {
                         Log.e("FoodCartViewModel", "Yemek silme başarısız: ${response.message}")
